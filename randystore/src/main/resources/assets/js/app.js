@@ -18,6 +18,18 @@ app.config(function($routeProvider) {
 			controller: 'ProductController',
 			templateUrl: 'views/product.html'
 		})
+		.when('/orders', {
+			controller: 'OrdersController',
+			templateUrl: 'views/orders.html'
+		})
+		.when('/order/:id', {
+			controller: 'OrderController',
+			templateUrl: 'views/order.html'
+		})
+		.when('/login', {
+			controller: 'NavigationController',
+			templateUrl: 'views/login.html'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});

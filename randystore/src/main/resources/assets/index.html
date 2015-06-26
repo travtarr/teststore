@@ -22,8 +22,11 @@
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-		        <li><a href="#">Link</a></li>
+		        <li class="active"><a href="#/products">Products<span class="sr-only">(current)</span></a></li>
+		        <li><a href="#/cart">Cart</a></li>
+		        <li ng-show="!authenticated"><a href="#/login">Login</a></li>
+		        <li ng-show="authenticated"><a href="#/orders">View Orders</a></li>
+		        <li ng-show="authenticated"><a href="" ng-click="logout()">Logout</a></li>
 		      </ul>
 		    </div>
 				
@@ -31,7 +34,7 @@
 		</nav>
 		
 		<!-- Main View manipulation by Angular -->
-		<div ng-view></div>
+		<div ng-view class="container"></div>
 		
 		<footer>
 			<div class="container">
@@ -50,6 +53,9 @@
 		
 		<!-- Services -->
 		<script src="js/services/photos.js"></script>
+		
+		<!-- Config -->
+		<script src="js/config/httpInterceptor.js"></script>
 	
 	</body>
 </html>
